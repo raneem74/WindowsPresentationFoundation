@@ -1,0 +1,88 @@
+﻿<Window x:Class="Painter.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Painter"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="810">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Border 
+            CornerRadius="5"
+            BorderBrush="LightSlateGray"
+            BorderThickness="5"
+            Background="CornflowerBlue"
+            Padding="5"
+            >
+
+            <InkCanvas Name="InkCan"></InkCanvas>
+        </Border>
+
+        <StackPanel Orientation="Horizontal" Margin="10,289,-10,0" Grid.RowSpan="2">
+            <GroupBox Width="100" Header="Colors">
+                <StackPanel>
+
+                    <RadioButton Checked="Change_Color" >Red</RadioButton>
+                    <RadioButton Checked="Change_Color" >Green</RadioButton>
+                    <RadioButton Checked="Change_Color" >Blue</RadioButton>
+                </StackPanel>
+            </GroupBox>
+
+            <GroupBox Width="150" Header="Modes">
+                <StackPanel>
+
+                    <RadioButton Checked="Change_Mode" >Ink</RadioButton>
+                    <RadioButton Checked="Change_Mode" >Select</RadioButton>
+                    <RadioButton Checked="Change_Mode" >Erase</RadioButton>
+                    <RadioButton Checked="Change_Mode" >Erase by strock</RadioButton>
+                </StackPanel>
+            </GroupBox>
+
+            <GroupBox Width="150" Header="drawing shape">
+                <StackPanel>
+
+                    <RadioButton Checked="Change_Shape" >ellipse</RadioButton>
+                    <RadioButton Checked="Change_Shape" >rectangle</RadioButton>
+                </StackPanel>
+            </GroupBox>
+
+            <GroupBox Width="150" Header="brush size">
+                <StackPanel>
+
+                    <RadioButton Checked="Change_Size" >small</RadioButton>
+                    <RadioButton Checked="Change_Size" >normal</RadioButton>
+                    <RadioButton Checked="Change_Size" >large</RadioButton>
+                </StackPanel>
+            </GroupBox>
+
+            <UniformGrid Width="237" Height="128" >
+
+                <Button Content="New" Click="New" Margin="10">
+
+                </Button>
+
+                <Button Content="save" Click="save" Margin="10">
+
+                </Button>
+
+                <Button Content="load" Click="load" Margin="10">
+
+                </Button>
+
+                <Button Content="copy" Click="copy" Margin="10"/>
+
+                <Button Content="cut" Click="cut" Margin="10">
+
+                </Button>
+
+                <Button Content="paste" Click="paste" Margin="10">
+
+                </Button>
+            </UniformGrid>
+        </StackPanel>
+    </Grid>
+</Window>
