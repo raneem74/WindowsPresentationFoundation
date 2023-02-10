@@ -1,0 +1,48 @@
+﻿<Window x:Class="textEditor.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:textEditor"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="483">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="200"></RowDefinition>
+            <RowDefinition Height="200"></RowDefinition>
+            <RowDefinition Height="100"></RowDefinition>
+            <RowDefinition Height="100"></RowDefinition>
+        </Grid.RowDefinitions>
+        
+        <RichTextBox Grid.Row="0" Name="txtBx" Height="200"/>
+
+        <UniformGrid Grid.Row="1" Height="108" VerticalAlignment="Top" Grid.RowSpan="2">
+            <Button Height="20" Margin="5" Content="Set text" Name="set" Click="Set"></Button>
+            <Button Height="20" Margin="5" Content="Select All" Name="selectAll" Click="SelectAll"></Button>
+            <Button Height="20" Margin="5" Content="clear" Name="clear" Click="Clear"></Button>
+            <Button Height="20" Margin="5" Content="prepend" Name="prepend" Click="Prepend"></Button>
+            <Button Height="20" Margin="5" Content="insert" Name="insert" Click="Insert"></Button>
+            <Button Height="20" Margin="5" Content="Append" Name="Append" Click="Append1"></Button>
+            <Button Height="20" Margin="5" Content="cut" Name="cut" Click="Cut"></Button>
+            <Button Height="20" Margin="5" Content="Paste" Name="Paste" Click="Paste1"></Button>
+            <Button Height="20" Margin="5" Content="undo" Name="undo" Click="Undo"></Button>
+        </UniformGrid>
+
+        <GroupBox Grid.Row="2">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" >
+                <RadioButton Checked="Editable"  Content="editable" ></RadioButton>
+                <RadioButton Checked="Editable"  Content="read only"></RadioButton>
+            </StackPanel>
+        </GroupBox>
+        
+        <GroupBox Grid.Row="3">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <RadioButton Checked="Alignment" Content="left" ></RadioButton>
+                <RadioButton Checked="Alignment" Content="center" ></RadioButton>
+                    <RadioButton Checked="Alignment" Content="right"  ></RadioButton>
+            </StackPanel>
+        </GroupBox>
+
+
+    </Grid>
+</Window>
